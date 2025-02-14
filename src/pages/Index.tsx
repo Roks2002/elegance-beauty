@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from "react";
 import { Menu } from "lucide-react";
 
@@ -23,7 +22,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-warm-white text-primary">
-      {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-warm-white/80 backdrop-blur-sm">
         <div className="max-w-[1680px] mx-auto px-6 md:px-12 lg:px-24 py-6 flex items-center justify-between">
           <div className="text-xl font-bold">GTA Equipment</div>
@@ -44,7 +42,6 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 md:px-12 lg:px-24">
         <div className="max-w-[1680px] mx-auto">
           <h1 className="text-5xl md:text-7xl font-serif leading-tight mb-8">
@@ -57,7 +54,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Equipment Categories */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-px bg-warm-white">
         {[
           {
@@ -78,7 +74,7 @@ const Index = () => {
           {
             title: "AERIALS",
             subtitle: "All Sizes",
-            image: "https://images.unsplash.com/photo-1541625602330-2277a4c46182",
+            image: "https://images.unsplash.com/photo-1541625602330-2277a4c4b425",
           },
           {
             title: "TRUCKS",
@@ -108,31 +104,71 @@ const Index = () => {
         ))}
       </section>
 
-      {/* Featured Work */}
       <section className="py-24 px-6 md:px-12 lg:px-24 bg-warm-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-serif mb-16">
-            Featured Equipment
+          <h2 className="text-3xl md:text-4xl font-serif mb-8">
+            Areas We Cover
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="group cursor-pointer">
-                <div className="overflow-hidden mb-6 aspect-[4/3]">
-                  <img
-                    src={`https://images.unsplash.com/photo-158109444${item}327-9b52bd1570c2`}
-                    alt={`Equipment ${item}`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <h3 className="text-xl font-serif mb-2">Equipment {item}</h3>
-                <p className="text-sm text-primary/60">Daily, Weekly, Monthly Rates</p>
-              </div>
-            ))}
+          <p className="text-lg text-primary/70 mb-12">
+            Serving the Greater Toronto Area and Beyond
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div>
+              <h3 className="font-bold text-xl mb-4">City of Toronto</h3>
+              <ul className="space-y-2 text-primary/70">
+                <li>Toronto (Downtown)</li>
+                <li>North York</li>
+                <li>Scarborough</li>
+                <li>Etobicoke</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-xl mb-4">Peel & Halton Region</h3>
+              <ul className="space-y-2 text-primary/70">
+                <li>Mississauga</li>
+                <li>Brampton</li>
+                <li>Oakville</li>
+                <li>Burlington</li>
+                <li>Milton</li>
+                <li>Caledon</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-xl mb-4">York Region</h3>
+              <ul className="space-y-2 text-primary/70">
+                <li>Markham</li>
+                <li>Vaughan</li>
+                <li>Richmond Hill</li>
+                <li>Aurora</li>
+                <li>Newmarket</li>
+                <li>Georgina</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-xl mb-4">Durham Region</h3>
+              <ul className="space-y-2 text-primary/70">
+                <li>Pickering</li>
+                <li>Ajax</li>
+                <li>Whitby</li>
+                <li>Oshawa</li>
+                <li>Clarington</li>
+                <li>Uxbridge</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-12 p-6 bg-secondary/10 rounded-lg">
+            <p className="text-sm text-primary/70">
+              We also serve select areas in the Greater Golden Horseshoe region, including Barrie, Innisfil, Collingwood, and surrounding areas. Contact us to verify service availability in your location.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="py-24 px-6 md:px-12 lg:px-24 bg-secondary/10">
         <div className="max-w-[1680px] mx-auto">
           <div className="mb-16">
