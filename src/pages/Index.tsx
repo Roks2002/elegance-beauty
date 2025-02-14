@@ -75,6 +75,21 @@ const Index = () => {
             subtitle: "All Sizes",
             image: "https://images.unsplash.com/photo-1581092446327-9b52bd1570c2",
           },
+          {
+            title: "CRANES",
+            subtitle: "Mobile & Tower",
+            image: "https://images.unsplash.com/photo-1541625602330-2277a4c46182",
+          },
+          {
+            title: "TRUCKS",
+            subtitle: "Dump & Haul",
+            image: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745",
+          },
+          {
+            title: "COMPACTORS",
+            subtitle: "Soil & Asphalt",
+            image: "https://images.unsplash.com/photo-1580974511812-4b7196e4b425",
+          },
         ].map((category, index) => (
           <div
             key={index}
