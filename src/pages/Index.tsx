@@ -46,11 +46,11 @@ const Index = () => {
       <section className="pt-32 pb-20 px-6 md:px-12 lg:px-24">
         <div className="max-w-[1680px] mx-auto">
           <h1 className="text-5xl md:text-7xl font-serif leading-tight mb-8">
-            Smart solutions<br />
-            for a sustainable future
+            Your trusted equipment<br />
+            rental partner in the GTA
           </h1>
           <p className="text-lg text-primary/60 mb-4">
-            Equipment rental solutions making impact since 1989
+            Connecting contractors with premium equipment since 2014
           </p>
         </div>
       </section>
