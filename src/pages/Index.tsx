@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 import { Menu } from "lucide-react";
 
@@ -59,17 +60,17 @@ const Index = () => {
           {
             title: "EXCAVATORS",
             subtitle: "2-40 Tons",
-            image: "https://images.unsplash.com/photo-1581094488379-6f42d2cc073c",
+            image: "https://images.unsplash.com/photo-1533064234578-8fa3fb5e7c74",
           },
           {
             title: "LOADERS",
             subtitle: "Wheel & Track",
-            image: "https://images.unsplash.com/photo-1579261767006-76d6156603b0",
+            image: "https://images.unsplash.com/photo-1514346267951-317c42ce4918",
           },
           {
             title: "DOZERS",
             subtitle: "All Sizes",
-            image: "https://images.unsplash.com/photo-1581092446327-9b52bd1570c2",
+            image: "https://images.unsplash.com/photo-1573611030146-ff6916c398fa",
           },
           {
             title: "AERIALS",
@@ -79,12 +80,12 @@ const Index = () => {
           {
             title: "TRUCKS",
             subtitle: "Dump & Haul",
-            image: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745",
+            image: "https://images.unsplash.com/photo-1592805144716-feeccccef5ac",
           },
           {
             title: "COMPACTORS",
             subtitle: "Soil & Asphalt",
-            image: "https://images.unsplash.com/photo-1580974511812-4b7196e4b425",
+            image: "https://images.unsplash.com/photo-1578687356165-780829c6d929",
           },
         ].map((category, index) => (
           <div
