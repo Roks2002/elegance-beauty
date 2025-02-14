@@ -87,6 +87,21 @@ const Index = () => {
             subtitle: "Soil & Asphalt",
             image: "https://images.unsplash.com/photo-1578687356165-780829c6d929",
           },
+          {
+            title: "FORKLIFTS",
+            subtitle: "Electric & Diesel",
+            image: "https://images.unsplash.com/photo-1578661339897-2b72b5a2b604",
+          },
+          {
+            title: "GENERATORS",
+            subtitle: "Portable & Industrial",
+            image: "https://images.unsplash.com/photo-1586767754784-279cc3d7cc0e",
+          },
+          {
+            title: "CONCRETE EQUIPMENT",
+            subtitle: "Mixers & Pumps",
+            image: "https://images.unsplash.com/photo-1576615278641-8c98ccd25b58",
+          },
         ].map((category, index) => (
           <div
             key={index}
