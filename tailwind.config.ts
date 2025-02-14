@@ -26,16 +26,16 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#1A1F2C",
+          DEFAULT: "#0A2540",
           foreground: "#F8F9FA",
         },
         secondary: {
-          DEFAULT: "#F97316",
-          foreground: "#F8F9FA",
+          DEFAULT: "#85C4B9",
+          foreground: "#0A2540",
         },
         accent: {
-          DEFAULT: "#F8F9FA",
-          foreground: "#1A1F2C",
+          DEFAULT: "#F7F4F0",
+          foreground: "#0A2540",
         },
       },
       fontFamily: {
@@ -43,7 +43,7 @@ export default {
         serif: ['Playfair Display', 'serif'],
       },
       backgroundColor: {
-        'warm-white': '#FAF9F7',
+        'warm-white': '#F7F4F0',
       },
       keyframes: {
         "slide-up": {

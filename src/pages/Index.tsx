@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from "react";
-import { Construction, Truck, MapPin, Phone } from "lucide-react";
+import { Menu } from "lucide-react";
 
 const Index = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -23,32 +23,42 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-warm-white text-primary">
-      {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-start overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1581094688434-4b19c0f89e95"
-            alt="Heavy Equipment"
-            className="w-full h-full object-cover opacity-40"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/80 to-transparent" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-24 w-full">
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 tracking-tight font-serif text-white">
-            HEAVY EQUIPMENT<br />
-            RENTAL
-          </h1>
-          <p className="text-xl md:text-2xl mb-12 text-gray-300 max-w-2xl font-serif">
-            Your trusted partner in heavy equipment solutions across the Greater Toronto Area
-          </p>
-          <button className="bg-white text-primary px-10 py-4 text-lg font-serif hover:bg-gray-100 transition-colors">
-            View Equipment
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-warm-white/80 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-6 flex items-center justify-between">
+          <div className="text-xl font-bold">GTA Equipment</div>
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="#work" className="text-primary/80 hover:text-primary">Work</a>
+            <a href="#expertise" className="text-primary/80 hover:text-primary">Expertise</a>
+            <a href="#studio" className="text-primary/80 hover:text-primary">Studio</a>
+            <button className="bg-secondary/20 text-primary px-4 py-2 rounded-full text-sm">
+              Mission
+            </button>
+            <button className="text-primary border border-primary px-4 py-2 rounded-full text-sm">
+              Get in touch
+            </button>
+          </div>
+          <button className="md:hidden">
+            <Menu className="w-6 h-6" />
           </button>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-6 md:px-12 lg:px-24">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-serif leading-tight mb-8">
+            Smart solutions<br />
+            for a sustainable future
+          </h1>
+          <p className="text-lg text-primary/60 mb-4">
+            Equipment rental solutions making impact since 1989
+          </p>
         </div>
       </section>
 
       {/* Equipment Categories */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-px">
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-px bg-warm-white">
         {[
           {
             title: "EXCAVATORS",
@@ -65,57 +75,42 @@ const Index = () => {
             subtitle: "All Sizes",
             image: "https://images.unsplash.com/photo-1581092446327-9b52bd1570c2",
           },
-          {
-            title: "AERIAL LIFTS",
-            subtitle: "Up to 150ft",
-            image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744",
-          },
-          {
-            title: "COMPACTORS",
-            subtitle: "Soil & Asphalt",
-            image: "https://images.unsplash.com/photo-1581092458590-1b4c36ec5769",
-          },
-          {
-            title: "TRUCKS",
-            subtitle: "Dump & Heavy Haul",
-            image: "https://images.unsplash.com/photo-1557459774-3277ef2e1f0e",
-          },
         ].map((category, index) => (
           <div
             key={index}
-            className="relative h-[60vh] group cursor-pointer overflow-hidden bg-black"
+            className="relative aspect-square group cursor-pointer overflow-hidden"
           >
             <img
               src={category.image}
               alt={category.title}
-              className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-110 transition-all duration-700"
+              className="w-full h-full object-cover opacity-90 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
             />
-            <div className="absolute inset-0 flex flex-col justify-end p-8">
-              <h3 className="text-3xl font-bold text-white mb-2 font-serif">{category.title}</h3>
-              <p className="text-lg text-gray-300 font-serif">{category.subtitle}</p>
+            <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-primary/40 to-transparent">
+              <h3 className="text-2xl font-serif text-white mb-2">{category.title}</h3>
+              <p className="text-sm text-white/80">{category.subtitle}</p>
             </div>
           </div>
         ))}
       </section>
 
-      {/* Featured Equipment */}
+      {/* Featured Work */}
       <section className="py-24 px-6 md:px-12 lg:px-24 bg-warm-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 font-serif">
+          <h2 className="text-3xl md:text-4xl font-serif mb-16">
             Featured Equipment
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[1, 2, 3, 4].map((item) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {[1, 2, 3].map((item) => (
               <div key={item} className="group cursor-pointer">
-                <div className="overflow-hidden mb-4">
+                <div className="overflow-hidden mb-6 aspect-[4/3]">
                   <img
                     src={`https://images.unsplash.com/photo-158109444${item}327-9b52bd1570c2`}
                     alt={`Equipment ${item}`}
-                    className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 font-serif">Equipment {item}</h3>
-                <p className="text-gray-600">Daily, Weekly, Monthly Rates</p>
+                <h3 className="text-xl font-serif mb-2">Equipment {item}</h3>
+                <p className="text-sm text-primary/60">Daily, Weekly, Monthly Rates</p>
               </div>
             ))}
           </div>
@@ -125,7 +120,7 @@ const Index = () => {
       {/* Contact Section */}
       <section className="py-24 px-6 md:px-12 lg:px-24 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 font-serif">
+          <h2 className="text-3xl md:text-4xl font-serif mb-12">
             Get in Touch
           </h2>
           <form className="space-y-6">
@@ -133,22 +128,22 @@ const Index = () => {
               <input
                 type="text"
                 placeholder="Your Name"
-                className="w-full px-6 py-4 bg-transparent border border-white/20 focus:outline-none focus:border-white"
+                className="w-full px-6 py-4 bg-transparent border border-white/20 focus:outline-none focus:border-white rounded-none"
               />
               <input
                 type="email"
                 placeholder="Your Email"
-                className="w-full px-6 py-4 bg-transparent border border-white/20 focus:outline-none focus:border-white"
+                className="w-full px-6 py-4 bg-transparent border border-white/20 focus:outline-none focus:border-white rounded-none"
               />
             </div>
             <textarea
               placeholder="Your Message"
               rows={4}
-              className="w-full px-6 py-4 bg-transparent border border-white/20 focus:outline-none focus:border-white"
+              className="w-full px-6 py-4 bg-transparent border border-white/20 focus:outline-none focus:border-white rounded-none"
             ></textarea>
             <button
               type="submit"
-              className="bg-white text-primary px-8 py-4 text-lg font-serif hover:bg-gray-100 transition-colors"
+              className="bg-white text-primary px-8 py-4 text-sm font-serif hover:bg-gray-100 transition-colors"
             >
               Send Message
             </button>
