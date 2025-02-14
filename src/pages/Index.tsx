@@ -180,111 +180,6 @@ const Index = () => {
         ))}
       </section>
 
-      <Dialog open={equipmentOpen} onOpenChange={setEquipmentOpen}>
-        <DialogContent className="bg-warm-white/95 backdrop-blur-sm border-none shadow-2xl sm:max-w-[725px] max-h-[80vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle className="text-3xl font-serif mb-6">Our Equipment</DialogTitle>
-            <DialogDescription className="text-primary/70">
-              <div className="space-y-8">
-                {equipmentCategories.map((category, index) => (
-                  <div key={index} className="border-b border-primary/10 pb-6 last:border-0">
-                    <h3 className="text-xl font-semibold text-primary mb-4">{category.title}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {category.items.map((item, itemIndex) => (
-                        <div 
-                          key={itemIndex}
-                          className="flex items-center p-3 rounded-lg bg-secondary/5 hover:bg-secondary/10 transition-colors"
-                        >
-                          <span className="text-primary/80">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </DialogDescription>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
-
-      <Dialog open={missionOpen} onOpenChange={setMissionOpen}>
-        <DialogContent className="bg-warm-white/95 backdrop-blur-sm border-none shadow-2xl sm:max-w-[525px]">
-          <DialogHeader>
-            <DialogTitle className="text-3xl font-serif mb-4">Our Mission</DialogTitle>
-            <DialogDescription className="text-primary/70 leading-relaxed">
-              At GTA Equipment, we're committed to supporting the Greater Toronto Area's construction and development projects with reliable, high-quality equipment solutions. Our mission is to provide seamless access to premium construction equipment while delivering exceptional service across Toronto, York Region, Peel & Halton Region, and Durham Region.
-              <br /><br />
-              We understand that every project is unique, which is why we offer flexible rental options and comprehensive support to ensure your success. From excavators to compactors, we maintain a modern fleet to meet the diverse needs of our growing community.
-            </DialogDescription>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
-
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-warm-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-serif mb-8">
-            Areas We Cover
-          </h2>
-          <p className="text-lg text-primary/70 mb-12">
-            Serving the Greater Toronto Area and Beyond
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            <div>
-              <h3 className="font-bold text-xl mb-4">City of Toronto</h3>
-              <ul className="space-y-2 text-primary/70">
-                <li>Toronto (Downtown)</li>
-                <li>North York</li>
-                <li>Scarborough</li>
-                <li>Etobicoke</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-bold text-xl mb-4">Peel & Halton Region</h3>
-              <ul className="space-y-2 text-primary/70">
-                <li>Mississauga</li>
-                <li>Brampton</li>
-                <li>Oakville</li>
-                <li>Burlington</li>
-                <li>Milton</li>
-                <li>Caledon</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-bold text-xl mb-4">York Region</h3>
-              <ul className="space-y-2 text-primary/70">
-                <li>Markham</li>
-                <li>Vaughan</li>
-                <li>Richmond Hill</li>
-                <li>Aurora</li>
-                <li>Newmarket</li>
-                <li>Georgina</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-bold text-xl mb-4">Durham Region</h3>
-              <ul className="space-y-2 text-primary/70">
-                <li>Pickering</li>
-                <li>Ajax</li>
-                <li>Whitby</li>
-                <li>Oshawa</li>
-                <li>Clarington</li>
-                <li>Uxbridge</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-12 p-6 bg-secondary/10 rounded-lg">
-            <p className="text-sm text-primary/70">
-              We also serve select areas in the Greater Golden Horseshoe region, including Barrie, Innisfil, Collingwood, and surrounding areas. Contact us to verify service availability in your location.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <footer className="py-24 px-6 md:px-12 lg:px-24 bg-secondary/10">
         <div className="max-w-[1680px] mx-auto">
           <div className="mb-16">
@@ -307,15 +202,6 @@ const Index = () => {
               </p>
             </div>
             
-            <div>
-              <div className="space-y-3">
-                <a href="#york" className="block text-sm text-primary/70 hover:text-primary">York Region</a>
-                <a href="#peel" className="block text-sm text-primary/70 hover:text-primary">Peel & Halton Region</a>
-                <a href="#toronto" className="block text-sm text-primary/70 hover:text-primary">City of Toronto</a>
-                <a href="#durham" className="block text-sm text-primary/70 hover:text-primary">Durham Region</a>
-              </div>
-            </div>
-
             <div>
               <div className="space-y-3">
                 <a href="#excavators" className="block text-sm text-primary/70 hover:text-primary">Excavators</a>
@@ -355,6 +241,34 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Equipment Dialog */}
+      <Dialog open={equipmentOpen} onOpenChange={setEquipmentOpen}>
+        <DialogContent className="bg-warm-white/95 backdrop-blur-sm border-none shadow-2xl sm:max-w-[725px] max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-3xl font-serif mb-6">Our Equipment</DialogTitle>
+            <DialogDescription className="text-primary/70">
+              <div className="space-y-8">
+                {equipmentCategories.map((category, index) => (
+                  <div key={index} className="border-b border-primary/10 pb-6 last:border-0">
+                    <h3 className="text-xl font-semibold text-primary mb-4">{category.title}</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {category.items.map((item, itemIndex) => (
+                        <div 
+                          key={itemIndex}
+                          className="flex items-center p-3 rounded-lg bg-secondary/5 hover:bg-secondary/10 transition-colors"
+                        >
+                          <span className="text-primary/80">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
 
       {/* Mission Dialog */}
       <Dialog open={missionOpen} onOpenChange={setMissionOpen}>
