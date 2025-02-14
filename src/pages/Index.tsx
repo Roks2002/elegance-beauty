@@ -60,7 +60,7 @@ const Index = () => {
           {
             title: "EXCAVATORS",
             subtitle: "2-40 Tons",
-            image: "https://images.unsplash.com/photo-1533064234578-8fa3fb5e7c74",
+            image: "https://images.unsplash.com/photo-1630288214173-a119cf823388?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           },
           {
             title: "LOADERS",
