@@ -25,18 +25,12 @@ const Index = () => {
     <div className="min-h-screen bg-warm-white text-primary">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-warm-white/80 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-6 flex items-center justify-between">
+        <div className="max-w-[1680px] mx-auto px-6 md:px-12 lg:px-24 py-6 flex items-center justify-between">
           <div className="text-xl font-bold">GTA Equipment</div>
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#work" className="text-primary/80 hover:text-primary">Work</a>
-            <a href="#expertise" className="text-primary/80 hover:text-primary">Expertise</a>
-            <a href="#studio" className="text-primary/80 hover:text-primary">Studio</a>
-            <button className="bg-secondary/20 text-primary px-4 py-2 rounded-full text-sm">
-              Mission
-            </button>
-            <button className="text-primary border border-primary px-4 py-2 rounded-full text-sm">
-              Get in touch
-            </button>
+          <div className="hidden md:flex items-center space-x-12">
+            <a href="#about" className="text-primary/80 hover:text-primary text-sm">About</a>
+            <a href="#equipment" className="text-primary/80 hover:text-primary text-sm">Equipment</a>
+            <a href="#contact" className="text-primary/80 hover:text-primary text-sm">Contact</a>
           </div>
           <button className="md:hidden">
             <Menu className="w-6 h-6" />
@@ -46,7 +40,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 md:px-12 lg:px-24">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1680px] mx-auto">
           <h1 className="text-5xl md:text-7xl font-serif leading-tight mb-8">
             Smart solutions<br />
             for a sustainable future
@@ -74,6 +68,36 @@ const Index = () => {
             title: "DOZERS",
             subtitle: "All Sizes",
             image: "https://images.unsplash.com/photo-1581092446327-9b52bd1570c2",
+          },
+          {
+            title: "AERIAL LIFTS",
+            subtitle: "Up to 150ft",
+            image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744",
+          },
+          {
+            title: "COMPACTORS",
+            subtitle: "Soil & Asphalt",
+            image: "https://images.unsplash.com/photo-1581092458590-1b4c36ec5769",
+          },
+          {
+            title: "TRUCKS",
+            subtitle: "Dump & Heavy Haul",
+            image: "https://images.unsplash.com/photo-1557459774-3277ef2e1f0e",
+          },
+          {
+            title: "GENERATORS",
+            subtitle: "Portable & Standby",
+            image: "https://images.unsplash.com/photo-1581092458590-1b4c36ec5769",
+          },
+          {
+            title: "CONCRETE EQUIPMENT",
+            subtitle: "Mixers & Pumps",
+            image: "https://images.unsplash.com/photo-1581092446327-9b52bd1570c2",
+          },
+          {
+            title: "LIGHT TOWERS",
+            subtitle: "Mobile Lighting",
+            image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744",
           },
         ].map((category, index) => (
           <div
