@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import { Menu, Phone, Info } from "lucide-react";
 import {
@@ -13,7 +14,6 @@ const Index = () => {
   const [termsOpen, setTermsOpen] = useState(false);
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [cookiesOpen, setCookiesOpen] = useState(false);
-  const [equipmentOpen, setEquipmentOpen] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isHeroVisible, setIsHeroVisible] = useState(false);
 
@@ -35,59 +35,14 @@ const Index = () => {
     return () => observerRef.current?.disconnect();
   }, []);
 
-  const equipmentCategories = [
-    {
-      title: "Compact Equipment",
-      items: [
-        "Compact Track Loader",
-        "Backhoe",
-        "Wheeled Skid Steer",
-        "Tractor",
-        "Mini Excavator",
-      ]
-    },
-    {
-      title: "Heavy Earthmoving",
-      items: [
-        "Wheel Loader",
-        "Dozer",
-        "Excavator",
-        "Articulated Dump Truck",
-      ]
-    },
-    {
-      title: "Lift & Aerial Work Platform",
-      items: [
-        "Telehandler",
-        "Scissor Lift",
-        "Straight Boom Lift",
-        "Forklift",
-        "Articulating Boom Lift",
-        "Towable Boom Lift",
-      ]
-    },
-    {
-      title: "Rollers & Compaction",
-      items: [
-        "Soil Compaction Smooth Drum",
-        "Soil Compaction Pad Foot",
-        "Asphalt Compaction Double Drum",
-      ]
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-warm-white text-primary">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-warm-white/80 backdrop-blur-sm">
         <div className="max-w-[1680px] mx-auto px-6 md:px-12 lg:px-24 py-6 flex items-center justify-between">
           <div className="text-xl font-bold">GTA Equipment</div>
           <div className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => setEquipmentOpen(true)} 
-              className="text-primary/80 hover:text-primary"
-            >
-              Equipment
-            </button>
+            <a href="#equipment" className="text-primary/80 hover:text-primary">Equipment</a>
+            <a href="#coverage" className="text-primary/80 hover:text-primary">Coverage</a>
             <a href="#about" className="text-primary/80 hover:text-primary">About</a>
             <button 
               onClick={() => setMissionOpen(true)}
@@ -179,33 +134,6 @@ const Index = () => {
           </div>
         ))}
       </section>
-
-      <Dialog open={equipmentOpen} onOpenChange={setEquipmentOpen}>
-        <DialogContent className="bg-warm-white/95 backdrop-blur-sm border-none shadow-2xl sm:max-w-[725px] max-h-[80vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle className="text-3xl font-serif mb-6">Our Equipment</DialogTitle>
-            <DialogDescription className="text-primary/70">
-              <div className="space-y-8">
-                {equipmentCategories.map((category, index) => (
-                  <div key={index} className="border-b border-primary/10 pb-6 last:border-0">
-                    <h3 className="text-xl font-semibold text-primary mb-4">{category.title}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {category.items.map((item, itemIndex) => (
-                        <div 
-                          key={itemIndex}
-                          className="flex items-center p-3 rounded-lg bg-secondary/5 hover:bg-secondary/10 transition-colors"
-                        >
-                          <span className="text-primary/80">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </DialogDescription>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
 
       <Dialog open={missionOpen} onOpenChange={setMissionOpen}>
         <DialogContent className="bg-warm-white/95 backdrop-blur-sm border-none shadow-2xl sm:max-w-[525px]">
