@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 import { Menu } from "lucide-react";
 
@@ -45,7 +46,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 md:px-12 lg:px-24">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1680px] mx-auto">
           <h1 className="text-5xl md:text-7xl font-serif leading-tight mb-8">
             Smart solutions<br />
             for a sustainable future
@@ -113,40 +114,6 @@ const Index = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-serif mb-12">
-            Get in Touch
-          </h2>
-          <form className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full px-6 py-4 bg-transparent border border-white/20 focus:outline-none focus:border-white rounded-none"
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full px-6 py-4 bg-transparent border border-white/20 focus:outline-none focus:border-white rounded-none"
-              />
-            </div>
-            <textarea
-              placeholder="Your Message"
-              rows={4}
-              className="w-full px-6 py-4 bg-transparent border border-white/20 focus:outline-none focus:border-white rounded-none"
-            ></textarea>
-            <button
-              type="submit"
-              className="bg-white text-primary px-8 py-4 text-sm font-serif hover:bg-gray-100 transition-colors"
-            >
-              Send Message
-            </button>
-          </form>
         </div>
       </section>
 
