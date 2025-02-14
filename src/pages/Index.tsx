@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import { Menu, Phone, Info } from "lucide-react";
 import {
@@ -10,6 +11,9 @@ import {
 
 const Index = () => {
   const [missionOpen, setMissionOpen] = useState(false);
+  const [termsOpen, setTermsOpen] = useState(false);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+  const [cookiesOpen, setCookiesOpen] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isHeroVisible, setIsHeroVisible] = useState(false);
 
@@ -266,13 +270,130 @@ const Index = () => {
               © 2024 GTA Equipment
             </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#terms" className="text-sm text-primary/50 hover:text-primary">Terms & Conditions</a>
-              <a href="#privacy" className="text-sm text-primary/50 hover:text-primary">Privacy Policy</a>
-              <a href="#cookies" className="text-sm text-primary/50 hover:text-primary">Cookie Policy</a>
+              <button onClick={() => setTermsOpen(true)} className="text-sm text-primary/50 hover:text-primary">
+                Terms & Conditions
+              </button>
+              <button onClick={() => setPrivacyOpen(true)} className="text-sm text-primary/50 hover:text-primary">
+                Privacy Policy
+              </button>
+              <button onClick={() => setCookiesOpen(true)} className="text-sm text-primary/50 hover:text-primary">
+                Cookie Policy
+              </button>
             </div>
           </div>
         </div>
       </footer>
+
+      {/* Mission Dialog */}
+      <Dialog open={missionOpen} onOpenChange={setMissionOpen}>
+        <DialogContent className="bg-warm-white/95 backdrop-blur-sm border-none shadow-2xl sm:max-w-[525px]">
+          <DialogHeader>
+            <DialogTitle className="text-3xl font-serif mb-4">Our Mission</DialogTitle>
+            <DialogDescription className="text-primary/70 leading-relaxed">
+              At GTA Equipment, we're committed to supporting the Greater Toronto Area's construction and development projects with reliable, high-quality equipment solutions. Our mission is to provide seamless access to premium construction equipment while delivering exceptional service across Toronto, York Region, Peel & Halton Region, and Durham Region.
+              <br /><br />
+              We understand that every project is unique, which is why we offer flexible rental options and comprehensive support to ensure your success. From excavators to compactors, we maintain a modern fleet to meet the diverse needs of our growing community.
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+
+      {/* Terms & Conditions Dialog */}
+      <Dialog open={termsOpen} onOpenChange={setTermsOpen}>
+        <DialogContent className="bg-warm-white/95 backdrop-blur-sm border-none shadow-2xl sm:max-w-[725px] max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-3xl font-serif mb-4">Terms & Conditions</DialogTitle>
+            <DialogDescription className="text-primary/70 leading-relaxed">
+              <h3 className="text-lg font-semibold text-primary mt-4 mb-2">1. Equipment Rental Agreement</h3>
+              <p className="mb-4">
+                By renting equipment from GTA Equipment, you agree to these terms and conditions. Each rental requires a signed rental agreement, valid identification, and proof of insurance.
+              </p>
+
+              <h3 className="text-lg font-semibold text-primary mt-4 mb-2">2. Rental Period</h3>
+              <p className="mb-4">
+                The rental period begins on the date of delivery or pickup and ends on the date of return. Minimum rental periods may apply. Late returns may incur additional charges.
+              </p>
+
+              <h3 className="text-lg font-semibold text-primary mt-4 mb-2">3. Equipment Care and Operation</h3>
+              <p className="mb-4">
+                Renters must operate equipment safely and in accordance with provided instructions. Any damage beyond normal wear and tear will be charged to the renter.
+              </p>
+
+              <h3 className="text-lg font-semibold text-primary mt-4 mb-2">4. Insurance Requirements</h3>
+              <p className="mb-4">
+                Renters must maintain adequate insurance coverage for rented equipment. Proof of insurance must be provided before rental commencement.
+              </p>
+
+              <h3 className="text-lg font-semibold text-primary mt-4 mb-2">5. Payment Terms</h3>
+              <p className="mb-4">
+                Payment is required prior to equipment release. We accept major credit cards and approved business accounts.
+              </p>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+
+      {/* Privacy Policy Dialog */}
+      <Dialog open={privacyOpen} onOpenChange={setPrivacyOpen}>
+        <DialogContent className="bg-warm-white/95 backdrop-blur-sm border-none shadow-2xl sm:max-w-[725px] max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-3xl font-serif mb-4">Privacy Policy</DialogTitle>
+            <DialogDescription className="text-primary/70 leading-relaxed">
+              <h3 className="text-lg font-semibold text-primary mt-4 mb-2">Information We Collect</h3>
+              <p className="mb-4">
+                We collect information necessary for equipment rental services, including contact details, payment information, and rental history. This helps us provide better service and maintain equipment records.
+              </p>
+
+              <h3 className="text-lg font-semibold text-primary mt-4 mb-2">How We Use Your Information</h3>
+              <p className="mb-4">
+                Your information is used to process rentals, maintain accounts, send important notifications, and improve our services. We never sell your personal information to third parties.
+              </p>
+
+              <h3 className="text-lg font-semibold text-primary mt-4 mb-2">Data Security</h3>
+              <p className="mb-4">
+                We implement industry-standard security measures to protect your personal information from unauthorized access, disclosure, or misuse.
+              </p>
+
+              <h3 className="text-lg font-semibold text-primary mt-4 mb-2">Your Rights</h3>
+              <p className="mb-4">
+                You have the right to access, correct, or delete your personal information. Contact us to exercise these rights or discuss privacy concerns.
+              </p>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+
+      {/* Cookie Policy Dialog */}
+      <Dialog open={cookiesOpen} onOpenChange={setCookiesOpen}>
+        <DialogContent className="bg-warm-white/95 backdrop-blur-sm border-none shadow-2xl sm:max-w-[725px] max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-3xl font-serif mb-4">Cookie Policy</DialogTitle>
+            <DialogDescription className="text-primary/70 leading-relaxed">
+              <h3 className="text-lg font-semibold text-primary mt-4 mb-2">What Are Cookies?</h3>
+              <p className="mb-4">
+                Cookies are small text files stored on your device when you visit our website. They help us improve your browsing experience and provide essential website functions.
+              </p>
+
+              <h3 className="text-lg font-semibold text-primary mt-4 mb-2">Types of Cookies We Use</h3>
+              <p className="mb-4">
+                <strong>Essential Cookies:</strong> Required for basic website functionality.<br />
+                <strong>Analytics Cookies:</strong> Help us understand how visitors use our site.<br />
+                <strong>Preference Cookies:</strong> Remember your settings and choices.
+              </p>
+
+              <h3 className="text-lg font-semibold text-primary mt-4 mb-2">Managing Cookies</h3>
+              <p className="mb-4">
+                You can control cookies through your browser settings. Note that disabling certain cookies may limit website functionality.
+              </p>
+
+              <h3 className="text-lg font-semibold text-primary mt-4 mb-2">Updates to This Policy</h3>
+              <p className="mb-4">
+                We may update our cookie policy periodically. Check back regularly for any changes in how we use cookies on our website.
+              </p>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
