@@ -194,18 +194,21 @@ const Index = () => {
             
             <div>
               <div className="space-y-3">
-                <a href="#transitions" className="block text-sm text-primary/70 hover:text-primary">Transitions</a>
-                <a href="#services" className="block text-sm text-primary/70 hover:text-primary">Services</a>
-                <a href="#industries" className="block text-sm text-primary/70 hover:text-primary">Industries</a>
-                <a href="#mission" className="block text-sm text-primary/70 hover:text-primary">Mission</a>
+                <a href="#york" className="block text-sm text-primary/70 hover:text-primary">York Region</a>
+                <a href="#peel" className="block text-sm text-primary/70 hover:text-primary">Peel & Halton Region</a>
+                <a href="#toronto" className="block text-sm text-primary/70 hover:text-primary">City of Toronto</a>
+                <a href="#durham" className="block text-sm text-primary/70 hover:text-primary">Durham Region</a>
               </div>
             </div>
 
             <div>
               <div className="space-y-3">
-                <a href="#about" className="block text-sm text-primary/70 hover:text-primary">About</a>
-                <a href="#work" className="block text-sm text-primary/70 hover:text-primary">Work</a>
-                <button className="text-sm text-secondary hover:text-secondary/80">Mission</button>
+                <a href="#excavators" className="block text-sm text-primary/70 hover:text-primary">Excavators</a>
+                <a href="#loaders" className="block text-sm text-primary/70 hover:text-primary">Loaders</a>
+                <a href="#dozers" className="block text-sm text-primary/70 hover:text-primary">Dozers</a>
+                <a href="#aerials" className="block text-sm text-primary/70 hover:text-primary">Aerials</a>
+                <a href="#trucks" className="block text-sm text-primary/70 hover:text-primary">Trucks</a>
+                <a href="#compactors" className="block text-sm text-primary/70 hover:text-primary">Compactors</a>
               </div>
             </div>
 
