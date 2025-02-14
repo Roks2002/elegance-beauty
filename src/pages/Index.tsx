@@ -95,9 +95,9 @@ const Index = () => {
             <img
               src={category.image}
               alt={category.title}
-              className="w-full h-full object-cover opacity-90 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
+              className="w-full h-full object-cover opacity-90 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700 mix-blend-multiply saturate-150"
             />
-            <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-primary/40 to-transparent">
+            <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-primary/60 via-primary/20 to-transparent">
               <h3 className="text-2xl font-serif text-white mb-2">{category.title}</h3>
               <p className="text-sm text-white/80">{category.subtitle}</p>
             </div>
