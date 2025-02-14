@@ -65,27 +65,27 @@ const Index = () => {
           {
             title: "LOADERS",
             subtitle: "Wheel & Track",
-            image: "https://images.unsplash.com/photo-1514346267951-317c42ce4918",
+            image: "https://images.unsplash.com/photo-1686945126682-35f9141dda15?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           },
           {
             title: "DOZERS",
             subtitle: "All Sizes",
-            image: "https://images.unsplash.com/photo-1573611030146-ff6916c398fa",
+            image: "https://images.unsplash.com/photo-1603814744174-115311ad645e?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           },
           {
             title: "AERIALS",
             subtitle: "All Sizes",
-            image: "https://images.unsplash.com/photo-1541625602330-2277a4c4b425",
+            image: "https://images.unsplash.com/photo-1611401433776-5295c244b757?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           },
           {
             title: "TRUCKS",
             subtitle: "Dump & Haul",
-            image: "https://images.unsplash.com/photo-1592805144716-feeccccef5ac",
+            image: "https://images.unsplash.com/photo-1603816885871-c122a9ff8d40?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           },
           {
             title: "COMPACTORS",
             subtitle: "Soil & Asphalt",
-            image: "https://images.unsplash.com/photo-1578687356165-780829c6d929",
+            image: "https://images.unsplash.com/photo-1603814744247-ca3e77714471?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           },
         ].map((category, index) => (
           <div
