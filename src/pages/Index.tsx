@@ -174,13 +174,13 @@ const Index = () => {
         <div className="max-w-[1680px] mx-auto">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-tight max-w-3xl">
-              Join us in accelerating transitions to a sustainable future.
+              Ready to get started with your next equipment rental?
             </h2>
             <p className="mt-6 text-lg text-primary/70">
-              Contact us today to make a difference together.
+              Contact us today to book the right equipment for your project.
             </p>
             <button className="mt-8 bg-secondary text-white px-6 py-3 rounded-full text-sm hover:bg-secondary/90 transition-colors">
-              Let's go!
+              Book Now
             </button>
           </div>
 
