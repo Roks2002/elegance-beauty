@@ -1,11 +1,21 @@
-
-import { useEffect, useRef } from "react";
-import { Menu } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Menu, Phone, Info } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 const Index = () => {
+  const [missionOpen, setMissionOpen] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const [isHeroVisible, setIsHeroVisible] = useState(false);
 
   useEffect(() => {
+    setIsHeroVisible(true);
+    
     observerRef.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -27,15 +37,23 @@ const Index = () => {
         <div className="max-w-[1680px] mx-auto px-6 md:px-12 lg:px-24 py-6 flex items-center justify-between">
           <div className="text-xl font-bold">GTA Equipment</div>
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#work" className="text-primary/80 hover:text-primary">Work</a>
-            <a href="#expertise" className="text-primary/80 hover:text-primary">Expertise</a>
-            <a href="#studio" className="text-primary/80 hover:text-primary">Studio</a>
-            <button className="bg-secondary/20 text-primary px-4 py-2 rounded-full text-sm">
+            <a href="#equipment" className="text-primary/80 hover:text-primary">Equipment</a>
+            <a href="#coverage" className="text-primary/80 hover:text-primary">Coverage</a>
+            <a href="#about" className="text-primary/80 hover:text-primary">About</a>
+            <button 
+              onClick={() => setMissionOpen(true)}
+              className="bg-secondary/20 text-primary px-4 py-2 rounded-full text-sm flex items-center gap-2"
+            >
+              <Info className="w-4 h-4" />
               Mission
             </button>
-            <button className="text-primary border border-primary px-4 py-2 rounded-full text-sm">
-              Get in touch
-            </button>
+            <a 
+              href="tel:+18885551234" 
+              className="text-primary border border-primary px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:bg-primary hover:text-white transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              1-888-555-1234
+            </a>
           </div>
           <button className="md:hidden">
             <Menu className="w-6 h-6" />
@@ -45,11 +63,19 @@ const Index = () => {
 
       <section className="pt-32 pb-20 px-6 md:px-12 lg:px-24">
         <div className="max-w-[1680px] mx-auto">
-          <h1 className="text-5xl md:text-7xl font-serif leading-tight mb-8">
+          <h1 
+            className={`text-5xl md:text-7xl font-serif leading-tight mb-8 transition-all duration-1000 transform ${
+              isHeroVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}
+          >
             Your trusted equipment<br />
             rental partner in the GTA
           </h1>
-          <p className="text-lg text-primary/60 mb-4">
+          <p 
+            className={`text-lg text-primary/60 mb-4 transition-all duration-1000 delay-300 transform ${
+              isHeroVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}
+          >
             Connecting contractors with premium equipment since 2014
           </p>
         </div>
@@ -104,6 +130,19 @@ const Index = () => {
           </div>
         ))}
       </section>
+
+      <Dialog open={missionOpen} onOpenChange={setMissionOpen}>
+        <DialogContent className="bg-warm-white/95 backdrop-blur-sm border-none shadow-2xl sm:max-w-[525px]">
+          <DialogHeader>
+            <DialogTitle className="text-3xl font-serif mb-4">Our Mission</DialogTitle>
+            <DialogDescription className="text-primary/70 leading-relaxed">
+              At GTA Equipment, we're committed to supporting the Greater Toronto Area's construction and development projects with reliable, high-quality equipment solutions. Our mission is to provide seamless access to premium construction equipment while delivering exceptional service across Toronto, York Region, Peel & Halton Region, and Durham Region.
+              <br /><br />
+              We understand that every project is unique, which is why we offer flexible rental options and comprehensive support to ensure your success. From excavators to compactors, we maintain a modern fleet to meet the diverse needs of our growing community.
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
 
       <section className="py-24 px-6 md:px-12 lg:px-24 bg-warm-white">
         <div className="max-w-7xl mx-auto">
