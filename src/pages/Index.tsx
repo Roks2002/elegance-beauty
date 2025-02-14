@@ -76,8 +76,8 @@ const Index = () => {
             image: "https://images.unsplash.com/photo-1581092446327-9b52bd1570c2",
           },
           {
-            title: "CRANES",
-            subtitle: "Mobile & Tower",
+            title: "AERIALS",
+            subtitle: "All Sizes",
             image: "https://images.unsplash.com/photo-1541625602330-2277a4c46182",
           },
           {
