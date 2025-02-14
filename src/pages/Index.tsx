@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from "react";
 import { Menu } from "lucide-react";
 
@@ -25,7 +24,7 @@ const Index = () => {
     <div className="min-h-screen bg-warm-white text-primary">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-warm-white/80 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-6 flex items-center justify-between">
+        <div className="max-w-[1680px] mx-auto px-6 md:px-12 lg:px-24 py-6 flex items-center justify-between">
           <div className="text-xl font-bold">GTA Equipment</div>
           <div className="hidden md:flex items-center space-x-8">
             <a href="#work" className="text-primary/80 hover:text-primary">Work</a>
@@ -150,6 +149,69 @@ const Index = () => {
           </form>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="py-24 px-6 md:px-12 lg:px-24 bg-secondary/10">
+        <div className="max-w-[1680px] mx-auto">
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-tight max-w-3xl">
+              Join us in accelerating transitions to a sustainable future.
+            </h2>
+            <p className="mt-6 text-lg text-primary/70">
+              Contact us today to make a difference together.
+            </p>
+            <button className="mt-8 bg-secondary text-white px-6 py-3 rounded-full text-sm hover:bg-secondary/90 transition-colors">
+              Let's go!
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pt-12 border-t border-primary/10">
+            <div>
+              <h3 className="font-bold mb-6">GTA Equipment</h3>
+              <p className="text-sm text-primary/70 max-w-xs">
+                Smart solutions for a sustainable future
+              </p>
+            </div>
+            
+            <div>
+              <div className="space-y-3">
+                <a href="#transitions" className="block text-sm text-primary/70 hover:text-primary">Transitions</a>
+                <a href="#services" className="block text-sm text-primary/70 hover:text-primary">Services</a>
+                <a href="#industries" className="block text-sm text-primary/70 hover:text-primary">Industries</a>
+                <a href="#mission" className="block text-sm text-primary/70 hover:text-primary">Mission</a>
+              </div>
+            </div>
+
+            <div>
+              <div className="space-y-3">
+                <a href="#about" className="block text-sm text-primary/70 hover:text-primary">About</a>
+                <a href="#work" className="block text-sm text-primary/70 hover:text-primary">Work</a>
+                <button className="text-sm text-secondary hover:text-secondary/80">Mission</button>
+              </div>
+            </div>
+
+            <div>
+              <div className="space-y-3">
+                <p className="text-sm text-primary/70">123 Equipment Drive</p>
+                <p className="text-sm text-primary/70">Toronto, ON M5V 2T6</p>
+                <a href="mailto:design@gta.equipment" className="block text-sm text-primary/70 hover:text-primary">design@gta.equipment</a>
+                <a href="tel:+16475551234" className="block text-sm text-primary/70 hover:text-primary">+1 (647) 555-1234</a>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-16 pt-8 border-t border-primary/10">
+            <div className="text-sm text-primary/50">
+              © 2024 GTA Equipment
+            </div>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <a href="#terms" className="text-sm text-primary/50 hover:text-primary">Terms & Conditions</a>
+              <a href="#privacy" className="text-sm text-primary/50 hover:text-primary">Privacy Policy</a>
+              <a href="#cookies" className="text-sm text-primary/50 hover:text-primary">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
