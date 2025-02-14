@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import { Menu, Phone, Info } from "lucide-react";
 import {
@@ -88,7 +89,6 @@ const Index = () => {
             >
               Equipment
             </button>
-            <a href="#about" className="text-primary/80 hover:text-primary">About</a>
             <button 
               onClick={() => setMissionOpen(true)}
               className="bg-secondary/20 text-primary px-4 py-2 rounded-full text-sm flex items-center gap-2"
