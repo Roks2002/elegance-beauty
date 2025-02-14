@@ -40,6 +40,10 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
+      },
+      backgroundColor: {
+        'warm-white': '#FAF9F7',
       },
       keyframes: {
         "slide-up": {

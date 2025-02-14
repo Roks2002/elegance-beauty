@@ -22,7 +22,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-primary text-primary-foreground">
+    <div className="min-h-screen bg-warm-white text-primary">
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-start overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -34,14 +34,14 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-primary/80 to-transparent" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-24 w-full">
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 tracking-tight">
+          <h1 className="text-6xl md:text-8xl font-bold mb-8 tracking-tight font-serif text-white">
             HEAVY EQUIPMENT<br />
             RENTAL
           </h1>
-          <p className="text-xl md:text-2xl mb-12 text-gray-300 max-w-2xl">
+          <p className="text-xl md:text-2xl mb-12 text-gray-300 max-w-2xl font-serif">
             Your trusted partner in heavy equipment solutions across the Greater Toronto Area
           </p>
-          <button className="bg-white text-primary px-10 py-4 text-lg font-semibold hover:bg-gray-100 transition-colors">
+          <button className="bg-white text-primary px-10 py-4 text-lg font-serif hover:bg-gray-100 transition-colors">
             View Equipment
           </button>
         </div>
@@ -91,17 +91,17 @@ const Index = () => {
               className="w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-110 transition-all duration-700"
             />
             <div className="absolute inset-0 flex flex-col justify-end p-8">
-              <h3 className="text-3xl font-bold text-white mb-2">{category.title}</h3>
-              <p className="text-lg text-gray-300">{category.subtitle}</p>
+              <h3 className="text-3xl font-bold text-white mb-2 font-serif">{category.title}</h3>
+              <p className="text-lg text-gray-300 font-serif">{category.subtitle}</p>
             </div>
           </div>
         ))}
       </section>
 
       {/* Featured Equipment */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white text-primary">
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-warm-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 font-serif">
             Featured Equipment
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -114,7 +114,7 @@ const Index = () => {
                     className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Equipment {item}</h3>
+                <h3 className="text-xl font-semibold mb-2 font-serif">Equipment {item}</h3>
                 <p className="text-gray-600">Daily, Weekly, Monthly Rates</p>
               </div>
             ))}
@@ -125,7 +125,7 @@ const Index = () => {
       {/* Contact Section */}
       <section className="py-24 px-6 md:px-12 lg:px-24 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 font-serif">
             Get in Touch
           </h2>
           <form className="space-y-6">
@@ -148,7 +148,7 @@ const Index = () => {
             ></textarea>
             <button
               type="submit"
-              className="bg-white text-primary px-8 py-4 text-lg font-semibold hover:bg-gray-100 transition-colors"
+              className="bg-white text-primary px-8 py-4 text-lg font-serif hover:bg-gray-100 transition-colors"
             >
               Send Message
             </button>
