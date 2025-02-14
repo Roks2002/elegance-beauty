@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Menu, Phone, Info, Calendar } from "lucide-react";
 import {
@@ -8,11 +7,19 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
+import { Calendar as CalendarComponent } from "@/components/ui/calendar";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { format } from "date-fns";
 
 const Index = () => {
   const [serviceOpen, setServiceOpen] = useState(false);
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [pricingOpen, setPricingOpen] = useState(false);
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const [date, setDate] = useState<Date>();
+  const [time, setTime] = useState("");
+  const [comment, setComment] = useState("");
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isHeroVisible, setIsHeroVisible] = useState(false);
 
@@ -99,6 +106,34 @@ const Index = () => {
     setServiceOpen(true);
   };
 
+  const handleBooking = () => {
+    if (!selectedService || !date || !time) {
+      return;
+    }
+
+    const bookingData = {
+      service: selectedService.title,
+      date: format(date, 'yyyy-MM-dd'),
+      time,
+      comment
+    };
+
+    console.log('Booking submitted:', bookingData);
+    alert('Booking submitted successfully! We will contact you to confirm your appointment.');
+    setBookingOpen(false);
+    setComment("");
+    setTime("");
+    setDate(undefined);
+  };
+
+  const handleBookNowClick = (service?: Service) => {
+    if (service) {
+      setSelectedService(service);
+    }
+    setServiceOpen(false);
+    setBookingOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-warm-white text-primary">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-warm-white/80 backdrop-blur-sm">
@@ -119,6 +154,7 @@ const Index = () => {
               1-888-555-1234
             </a>
             <button 
+              onClick={() => handleBookNowClick()}
               className="bg-secondary text-white px-4 py-2 rounded-full text-sm flex items-center gap-2 hover:bg-secondary/90"
             >
               <Calendar className="w-4 h-4" />
@@ -245,10 +281,96 @@ const Index = () => {
                   </div>
                 </div>
                 <button 
+                  onClick={() => handleBookNowClick(selectedService)}
                   className="w-full bg-secondary text-white px-6 py-3 rounded-full text-sm hover:bg-secondary/90 transition-colors flex items-center justify-center gap-2"
                 >
                   <Calendar className="w-4 h-4" />
                   Book this service
+                </button>
+              </div>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+
+      {/* Booking Dialog */}
+      <Dialog open={bookingOpen} onOpenChange={setBookingOpen}>
+        <DialogContent className="bg-warm-white/95 backdrop-blur-sm border-none shadow-2xl sm:max-w-[500px]">
+          <DialogHeader>
+            <DialogTitle className="text-3xl font-serif mb-4">Book Appointment</DialogTitle>
+            <DialogDescription>
+              <div className="space-y-6">
+                {!selectedService && (
+                  <div className="mb-6">
+                    <Label htmlFor="service">Select Service</Label>
+                    <select 
+                      id="service"
+                      className="w-full p-2 rounded-md border border-gray-300 mt-2"
+                      onChange={(e) => {
+                        const service = services.find(s => s.title === e.target.value);
+                        setSelectedService(service || null);
+                      }}
+                      value={selectedService?.title || ""}
+                    >
+                      <option value="">Choose a service...</option>
+                      {services.map((service, index) => (
+                        <option key={index} value={service.title}>
+                          {service.title} ({service.priceRange})
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                )}
+
+                <div>
+                  <Label>Select Date</Label>
+                  <div className="mt-2 border rounded-md p-2">
+                    <CalendarComponent
+                      mode="single"
+                      selected={date}
+                      onSelect={setDate}
+                      className="rounded-md border"
+                      disabled={(date) => date < new Date()}
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <Label htmlFor="time">Select Time</Label>
+                  <select 
+                    id="time"
+                    className="w-full p-2 rounded-md border border-gray-300 mt-2"
+                    value={time}
+                    onChange={(e) => setTime(e.target.value)}
+                  >
+                    <option value="">Choose a time...</option>
+                    {[
+                      "09:00", "10:00", "11:00", "12:00", "13:00", 
+                      "14:00", "15:00", "16:00", "17:00", "18:00"
+                    ].map((t) => (
+                      <option key={t} value={t}>{t}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <Label htmlFor="comment">Additional Comments</Label>
+                  <textarea
+                    id="comment"
+                    className="w-full p-2 rounded-md border border-gray-300 mt-2 min-h-[100px]"
+                    placeholder="Any special requests or notes..."
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                  />
+                </div>
+
+                <button 
+                  onClick={handleBooking}
+                  disabled={!selectedService || !date || !time}
+                  className="w-full bg-secondary text-white px-6 py-3 rounded-full text-sm hover:bg-secondary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
+                  <Calendar className="w-4 h-4" />
+                  Confirm Booking
                 </button>
               </div>
             </DialogDescription>
